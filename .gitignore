@@ -1,3 +1,6 @@
 # 项目排除路径
-/netty-study-1-01/target/
-/netty-study-1-02/target/
+.idea
+*.iml
+/*/target/
+/*/.idea/
+/*/*.imi
