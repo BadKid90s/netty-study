@@ -27,27 +27,18 @@ public class SocketBio {
         }
     }
 
-    private static void handle(final Socket socket)  {
-        InputStream inputStream = null;
-        try {
-            inputStream = socket.getInputStream();
+    private static void handle(final Socket socket) {
+        try (InputStream socketInputStream = socket.getInputStream()) {
             byte[] bytes = new byte[1024];
-
             while (true) {
-                int read = inputStream.read(bytes);
+                int read = socketInputStream.read(bytes);
                 if (read == -1) {
                     break;
                 }
-                System.out.println("接受到的消息：" + new String(bytes,0,read));
+                System.out.println("接受到的消息：" + new String(bytes, 0, read));
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                inputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
