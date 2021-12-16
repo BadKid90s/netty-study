@@ -1,4 +1,4 @@
-package com.wry.netty.server;
+package com.wry.bio.server;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;

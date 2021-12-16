@@ -1,4 +1,4 @@
-package com.wry.netty.server;
+package com.wry.bio.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -25,7 +25,8 @@ public class NettyServer {
                 //非阻塞模式
                 .channel(NioServerSocketChannel.class)
                 .option(ChannelOption.SO_BACKLOG, 128)
-                .childHandler(new MyChannelInitializer());
+                .childHandler(new MyChannelInitializer())
+                .childHandler(new MyServerHandler());
 
         try {
             ChannelFuture f = b.bind(port).sync();
