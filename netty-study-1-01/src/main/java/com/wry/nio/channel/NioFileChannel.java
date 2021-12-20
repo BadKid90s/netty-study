@@ -14,7 +14,7 @@ public class NioFileChannel {
         String hello = "hello word! ";
         String path = "/Users/wry/file.txt";
 
-        wrier(hello, path);
+        writer(hello, path);
 
         read(path);
     }
@@ -39,7 +39,7 @@ public class NioFileChannel {
         fileInputStream.close();
     }
 
-    public static void wrier(String hello, String path) throws IOException {
+    public static void writer(String hello, String path) throws IOException {
         //创建一个输出流 -> channel
         FileOutputStream fileOutputStream = new FileOutputStream(path);
         // 通过fileOutputStream 获取对应的 FileChannel
