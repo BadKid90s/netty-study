@@ -28,10 +28,8 @@ public class NioFileChannel {
         FileChannel channel = fileInputStream.getChannel();
         //创建byteBuffer
         ByteBuffer byteBuffer = ByteBuffer.allocate((int) file.length());
-
         //channel数据转byteBuffer
         channel.read(byteBuffer);
-
         //输出
         System.out.println(new String(byteBuffer.array(), StandardCharsets.UTF_8));
 
