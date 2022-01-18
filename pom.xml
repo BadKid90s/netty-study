@@ -11,6 +11,8 @@
     <modules>
         <module>netty-study-1-01</module>
         <module>netty-study-1-02</module>
+        <module>netty-study-2-01</module>
+        <module>netty-study-2-02</module>
     </modules>
 
     <properties>
