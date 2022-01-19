@@ -22,10 +22,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
         System.out.println("链接报告IP:" + channel.localAddress().getHostString());
         System.out.println("链接报告Port:" + channel.localAddress().getPort());
         System.out.println("链接报告完毕");
-        //通知客户端链接建立成功
-        String str = "通知客户端链接建立成功" + " " + LocalDateTime.now() + " " + channel.localAddress().getHostString() + "\r\n";
-        //通知客户端链消息发送成功｛不需要通过ByteBuf，可以直接发送字符串｝
-        ctx.writeAndFlush(str);
+
     }
 
     /**

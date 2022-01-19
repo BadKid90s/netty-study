@@ -19,8 +19,8 @@ public class MyEncoder extends MessageToByteEncoder {
 
         byte[] send = new byte[bytes.length + 2];
         System.arraycopy(bytes, 0, send, 1, bytes.length);
-        send[0] = 0x02;
-        send[send.length - 1] = 0x03;
+        send[0] = 48;
+        send[send.length - 1] = 48;
 
         out.writeInt(send.length);
         out.writeBytes(send);
